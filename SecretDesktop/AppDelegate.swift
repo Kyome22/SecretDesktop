@@ -58,6 +58,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             desktops.removeAll()
             hideItem?.state = NSControl.StateValue.off
         } else {
+            Swift.print(NSScreen.screens.count)
             for screen in NSScreen.screens {
                 guard let wc = storyboard.instantiateController(withIdentifier: "SecretWindow") as? SecretWC else {
                     continue
