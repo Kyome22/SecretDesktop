@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SpiceKey
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,75 +15,62 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: NSMenu!
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private let storyboard = NSStoryboard(name: "Main", bundle: nil)
-    private var hideItem: NSMenuItem?
+    private var hideItem: NSMenuItem!
     private var desktops = [SecretWC]()
     private var isSecret: Bool = false
-    public var aboutWC: AboutWC? = nil
-    
-    class var shared: AppDelegate {
-        return NSApplication.shared.delegate as! AppDelegate
-    }
+    private var spiceKey: SpiceKey?
    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.menu = menu
         statusItem.button?.image = NSImage(imageLiteralResourceName: "StatusIcon")
+        hideItem = menu.item(withTag: 0)!
+        hideItem.setAction(target: self, selector: #selector(toggleHide))
+        menu.item(withTag: 1)?.setAction(target: self, selector: #selector(openAbout))
         
-        hideItem = menu.item(withTag: 0)
-        hideItem?.target = self
-        hideItem?.action = #selector(AppDelegate.hide)
+        spiceKey = SpiceKey(KeyCombination(Key.h, ModifierFlags.sftCmd), keyDownHandler: {
+            self.toggleHide()
+        })
+        spiceKey?.register()
         
-        let aboutItem = menu.item(withTag: 1)
-        aboutItem?.target = self
-        aboutItem?.action = #selector(AppDelegate.openAbout)
-        
-        let quitItem = menu.item(withTag: 2)
-        quitItem?.target = self
-        quitItem?.action = #selector(AppDelegate.quit)
-        
-        NSWorkspace.shared.notificationCenter.addObserver(self,
-                                                          selector: #selector(changedActiveSpace(_:)),
-                                                          name: NSWorkspace.activeSpaceDidChangeNotification,
-                                                          object: nil)
-        hide()
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
+        let wsnc = NSWorkspace.shared.notificationCenter
+        wsnc.addObserver(self, selector: #selector(changedActiveSpace(_:)),
+                        name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
+        toggleHide()
     }
     
-    @objc func hide() {
+    func applicationWillTerminate(_ aNotification: Notification) {
+        spiceKey?.unregister()
+    }
+    
+    func applicationDidChangeScreenParameters(_ notification: Notification) {
+        if isSecret {
+            toggleHide()
+        }
+    }
+    
+    @objc func toggleHide() {
         if isSecret {
             desktops.forEach { (wc) in
                 wc.close()
             }
             desktops.removeAll()
-            hideItem?.state = NSControl.StateValue.off
-        } else {
-            Swift.print(NSScreen.screens.count)
+            hideItem.state = NSControl.StateValue.off
+        } else {            
             for screen in NSScreen.screens {
-                guard let wc = storyboard.instantiateController(withIdentifier: "SecretWindow") as? SecretWC else {
-                    continue
-                }
+                let sb = NSStoryboard(name: "Secret", bundle: nil)
+                let wc = sb.instantiateInitialController() as! SecretWC
                 desktops.append(wc)
                 wc.setWindowFrame(screen.frame)
                 wc.showWindow(self)
             }
-            hideItem?.state = NSControl.StateValue.on
+            hideItem.state = NSControl.StateValue.on
         }
         isSecret = !isSecret
     }
     
     @objc func openAbout() {
         NSApp.activate(ignoringOtherApps: true)
-        if aboutWC == nil {
-            aboutWC = storyboard.instantiateController(withIdentifier: "AboutWindow") as? AboutWC
-            aboutWC?.showWindow(self)
-        }
-        aboutWC?.window?.orderFrontRegardless()
-    }
-
-    @objc func quit() {
-        NSApplication.shared.terminate(self)
+        NSApp.orderFrontStandardAboutPanel(nil)
     }
     
     @objc func changedActiveSpace(_ notification: NSNotification) {

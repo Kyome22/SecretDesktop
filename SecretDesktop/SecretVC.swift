@@ -11,24 +11,14 @@ import Cocoa
 class SecretVC: NSViewController {
 
     @IBOutlet weak var imageView: NSImageView!
-    private var image: NSImage?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        setImage()
     }
     
-    override func viewDidAppear() {
-        image = NSImage.desktopPicture(targetPoint: self.view.window!.frame.origin)
-        imageView.image = image?.resize(targetSize: self.view.bounds.size)
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        }
-    }
-    
-    func changedActiveSpace() {
-        image = NSImage.desktopPicture(targetPoint: self.view.window!.frame.origin)
+    func setImage() {
+        let image = NSImage.desktopPicture(targetPoint: self.view.window!.frame.origin)
         imageView.image = image?.resize(targetSize: self.view.bounds.size)
     }
 

@@ -3,21 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1429AF23FCE77200FCE199 /* Secret.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1429AE23FCE77200FCE199 /* Secret.storyboard */; };
 		1C7BAB142282251100B0AAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB132282251100B0AAE2 /* AppDelegate.swift */; };
 		1C7BAB162282251100B0AAE2 /* SecretVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB152282251100B0AAE2 /* SecretVC.swift */; };
 		1C7BAB182282251200B0AAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7BAB172282251200B0AAE2 /* Assets.xcassets */; };
 		1C7BAB1B2282251200B0AAE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7BAB192282251200B0AAE2 /* Main.storyboard */; };
 		1C7BAB24228225BC00B0AAE2 /* SecretWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB23228225BC00B0AAE2 /* SecretWC.swift */; };
 		1C7BAB262282262800B0AAE2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB252282262800B0AAE2 /* Extensions.swift */; };
-		1CCFEBD4229D30770014998D /* AboutWC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFEBD3229D30760014998D /* AboutWC.swift */; };
-		1CCFEBD6229D30860014998D /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCFEBD5229D30860014998D /* AboutVC.swift */; };
+		D6DFD52AF30B951EA3B38DD5 /* Pods_SecretDesktop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1429AE23FCE77200FCE199 /* Secret.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secret.storyboard; sourceTree = "<group>"; };
+		1C1429B023FCE87000FCE199 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		1C7BAB102282251100B0AAE2 /* SecretDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7BAB132282251100B0AAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C7BAB152282251100B0AAE2 /* SecretVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretVC.swift; sourceTree = "<group>"; };
@@ -27,8 +29,9 @@
 		1C7BAB1D2282251200B0AAE2 /* SecretDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretDesktop.entitlements; sourceTree = "<group>"; };
 		1C7BAB23228225BC00B0AAE2 /* SecretWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWC.swift; sourceTree = "<group>"; };
 		1C7BAB252282262800B0AAE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1CCFEBD3229D30760014998D /* AboutWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWC.swift; sourceTree = "<group>"; };
-		1CCFEBD5229D30860014998D /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.release.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.release.xcconfig"; sourceTree = "<group>"; };
+		AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.debug.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6DFD52AF30B951EA3B38DD5 /* Pods_SecretDesktop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +51,8 @@
 			children = (
 				1C7BAB122282251100B0AAE2 /* SecretDesktop */,
 				1C7BAB112282251100B0AAE2 /* Products */,
+				B52B169FDAA763FDD3BC308B /* Pods */,
+				221896502C43F88E46AB5053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,16 +69,32 @@
 			children = (
 				1C7BAB252282262800B0AAE2 /* Extensions.swift */,
 				1C7BAB132282251100B0AAE2 /* AppDelegate.swift */,
+				1C7BAB192282251200B0AAE2 /* Main.storyboard */,
+				1C1429AE23FCE77200FCE199 /* Secret.storyboard */,
 				1C7BAB23228225BC00B0AAE2 /* SecretWC.swift */,
 				1C7BAB152282251100B0AAE2 /* SecretVC.swift */,
-				1CCFEBD3229D30760014998D /* AboutWC.swift */,
-				1CCFEBD5229D30860014998D /* AboutVC.swift */,
 				1C7BAB172282251200B0AAE2 /* Assets.xcassets */,
-				1C7BAB192282251200B0AAE2 /* Main.storyboard */,
 				1C7BAB1C2282251200B0AAE2 /* Info.plist */,
 				1C7BAB1D2282251200B0AAE2 /* SecretDesktop.entitlements */,
 			);
 			path = SecretDesktop;
+			sourceTree = "<group>";
+		};
+		221896502C43F88E46AB5053 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B52B169FDAA763FDD3BC308B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */,
+				624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C7BAB202282251200B0AAE2 /* Build configuration list for PBXNativeTarget "SecretDesktop" */;
 			buildPhases = (
+				5DFEB2130CBD2C051C9C4BE3 /* [CP] Check Pods Manifest.lock */,
 				1C7BAB0C2282251100B0AAE2 /* Sources */,
 				1C7BAB0D2282251100B0AAE2 /* Frameworks */,
 				1C7BAB0E2282251100B0AAE2 /* Resources */,
+				EA4D4138786DCE91BB565790 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,7 +126,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Takuto Nakamura";
 				TargetAttributes = {
 					1C7BAB0F2282251100B0AAE2 = {
@@ -111,12 +135,13 @@
 				};
 			};
 			buildConfigurationList = 1C7BAB0B2282251100B0AAE2 /* Build configuration list for PBXProject "SecretDesktop" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 1C7BAB072282251100B0AAE2;
 			productRefGroup = 1C7BAB112282251100B0AAE2 /* Products */;
@@ -134,11 +159,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7BAB182282251200B0AAE2 /* Assets.xcassets in Resources */,
+				1C1429AF23FCE77200FCE199 /* Secret.storyboard in Resources */,
 				1C7BAB1B2282251200B0AAE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5DFEB2130CBD2C051C9C4BE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SecretDesktop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4D4138786DCE91BB565790 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C7BAB0C2282251100B0AAE2 /* Sources */ = {
@@ -146,8 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C7BAB162282251100B0AAE2 /* SecretVC.swift in Sources */,
-				1CCFEBD4229D30770014998D /* AboutWC.swift in Sources */,
-				1CCFEBD6229D30860014998D /* AboutVC.swift in Sources */,
 				1C7BAB24228225BC00B0AAE2 /* SecretWC.swift in Sources */,
 				1C7BAB142282251100B0AAE2 /* AppDelegate.swift in Sources */,
 				1C7BAB262282262800B0AAE2 /* Extensions.swift in Sources */,
@@ -161,6 +227,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1C7BAB1A2282251200B0AAE2 /* Base */,
+				1C1429B023FCE87000FCE199 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -172,6 +239,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -233,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -285,12 +354,15 @@
 		};
 		1C7BAB212282251200B0AAE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SecretDesktop/SecretDesktop.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,18 +370,22 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		1C7BAB222282251200B0AAE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SecretDesktop/SecretDesktop.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,6 +393,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

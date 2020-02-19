@@ -8,17 +8,10 @@
 
 import Cocoa
 
-extension NSColor {
-    convenience init(hex: String, alpha: CGFloat) {
-        let v = hex.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
-        let r = CGFloat(Int(v[0] + v[1], radix: 16) ?? 0) / 255.0
-        let g = CGFloat(Int(v[2] + v[3], radix: 16) ?? 0) / 255.0
-        let b = CGFloat(Int(v[4] + v[5], radix: 16) ?? 0) / 255.0
-        self.init(red: r, green: g, blue: b, alpha: min(max(alpha, 0), 1))
-    }
-    
-    convenience init(hex: String) {
-        self.init(hex: hex, alpha: 1.0)
+extension NSMenuItem {
+    func setAction(target: AnyObject, selector: Selector) {
+        self.target = target
+        self.action = selector
     }
 }
 
@@ -36,16 +29,24 @@ extension NSImage {
             }
             return false
         }
+        var windows = [(rect: CGRect, id: UInt32)]()
         for window in windowList {
             let bounds = window[kCGWindowBounds] as! NSDictionary
             let X = bounds["X"] as! CGFloat
             let Y = bounds["Y"] as! CGFloat
             let W = bounds["Width"] as! CGFloat
             let H = bounds["Height"] as! CGFloat
-            let rect = CGRect(x: X, y: Y, width: W, height: H)
+            windows.append((rect: CGRect(x: X, y: Y, width: W, height: H),
+                            id: window[kCGWindowNumber] as! UInt32))
+        }
+        let origin = windows.filter({ (window) -> Bool in
+            return window.rect.origin == CGPoint.zero
+        })[0]
+        for n in (0 ..< windows.count) {
+            var rect = windows[n].rect
+            rect.origin.y = origin.rect.height - rect.origin.y - rect.height
             if rect.contains(targetPoint) {
-                let id = window[kCGWindowNumber] as! UInt32
-                guard let cgImage = CGWindowListCreateImage(rect, .optionIncludingWindow, id, .boundsIgnoreFraming) else {
+                guard let cgImage = CGWindowListCreateImage(windows[n].rect, .optionIncludingWindow, windows[n].id, .boundsIgnoreFraming) else {
                     break
                 }
                 let nsImage = NSImage(cgImage: cgImage, size: rect.size)
@@ -84,4 +85,3 @@ extension NSImage {
         return newImage
     }
 }
-

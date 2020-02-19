@@ -8,15 +8,11 @@
 
 import Cocoa
 
-class SecretWC: NSWindowController, NSWindowDelegate {
-    
-    private var frame = NSRect.zero
+class SecretWC: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        self.window!.delegate = self
         self.window!.isOpaque = false
-        self.window!.backgroundColor = NSColor(hex: "000000", alpha: 0.01)
         self.window!.level = NSWindow.Level(Int(CGWindowLevelForKey(CGWindowLevelKey.normalWindow)) - 1)
         self.window!.collectionBehavior = [.canJoinAllSpaces,
                                            .ignoresCycle,
@@ -29,15 +25,8 @@ class SecretWC: NSWindowController, NSWindowDelegate {
         self.window!.setFrame(frame, display: true)
     }
     
-    func windowWillClose(_ notification: Notification) {
-        self.contentViewController = nil
-    }
-    
     func changedActiveSpace() {
-        guard let vc = self.contentViewController as? SecretVC else {
-            return
-        }
-        vc.changedActiveSpace()
+        (self.contentViewController as! SecretVC).setImage()
     }
 
 }

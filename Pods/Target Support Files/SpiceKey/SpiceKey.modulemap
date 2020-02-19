@@ -1,0 +1,6 @@
+framework module SpiceKey {
+  umbrella header "SpiceKey-umbrella.h"
+
+  export *
+  module * { export * }
+}
