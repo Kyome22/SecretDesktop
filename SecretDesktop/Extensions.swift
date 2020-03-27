@@ -20,6 +20,10 @@ extension String {
     }
 }
 
+extension NSColor {
+    static let url = NSColor(named: "url")!
+}
+
 extension NSMenuItem {
     func setAction(target: AnyObject, selector: Selector) {
         self.target = target

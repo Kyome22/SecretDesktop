@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  SecretDesktop
+
+  Created by Takuto Nakamura on 2020/03/28.
+  Copyright © 2020 Takuto Nakamura. All rights reserved.
+*/
+
+"oss" = "SecretDesktop is an open-source software.\n";

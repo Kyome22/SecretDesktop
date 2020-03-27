@@ -59,7 +59,7 @@
                         <menuItem title="SecretDesktopについて" tag="1" id="CFc-YW-A1O">
                             <modifierMask key="keyEquivalentModifierMask"/>
                         </menuItem>
-                        <menuItem title="SecretDesktopを終了する" tag="2" id="QwP-JE-IcB">
+                        <menuItem title="SecretDesktopを終了" tag="2" id="QwP-JE-IcB">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="terminate:" target="Ady-hI-5gd" id="Wdv-a9-dSH"/>
