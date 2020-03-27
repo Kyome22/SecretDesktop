@@ -19,10 +19,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var desktops = [SecretWC]()
     private var isSecret: Bool = false
     private var spiceKey: SpiceKey?
-   
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.menu = menu
-        statusItem.button?.image = NSImage(imageLiteralResourceName: "StatusIcon")
+        statusItem.button?.image = NSImage(named: "StatusIcon")
         hideItem = menu.item(withTag: 0)!
         hideItem.setAction(target: self, selector: #selector(toggleHide))
         menu.item(withTag: 1)?.setAction(target: self, selector: #selector(openAbout))
@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let wsnc = NSWorkspace.shared.notificationCenter
         wsnc.addObserver(self, selector: #selector(changedActiveSpace(_:)),
-                        name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
+                         name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
         toggleHide()
     }
     
@@ -55,13 +55,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             desktops.removeAll()
             hideItem.state = NSControl.StateValue.off
-        } else {            
+        } else {
+            let sb = NSStoryboard(name: "Secret", bundle: nil)
             for screen in NSScreen.screens {
-                let sb = NSStoryboard(name: "Secret", bundle: nil)
                 let wc = sb.instantiateInitialController() as! SecretWC
+                wc.set(screen.frame)
+                wc.showWindow(nil)
                 desktops.append(wc)
-                wc.setWindowFrame(screen.frame)
-                wc.showWindow(self)
             }
             hideItem.state = NSControl.StateValue.on
         }
@@ -74,13 +74,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func changedActiveSpace(_ notification: NSNotification) {
-        let mainFrame = NSScreen.main!.frame
+        guard let screen = NSScreen.main else { return }
         desktops.forEach { (wc) in
-            if wc.window!.frame == mainFrame {
-                wc.changedActiveSpace()
+            guard let window = wc.window else { return }
+            if window.frame.origin.equalTo(screen.frame.origin) {
+                wc.setImage(window.frame)
             }
         }
     }
-
+    
 }
-

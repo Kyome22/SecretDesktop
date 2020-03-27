@@ -13,20 +13,23 @@ class SecretWC: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         self.window!.isOpaque = false
-        self.window!.level = NSWindow.Level(Int(CGWindowLevelForKey(CGWindowLevelKey.normalWindow)) - 1)
+        let level = 1 + Int(CGWindowLevelForKey(CGWindowLevelKey.desktopIconWindow))
+        self.window!.level = NSWindow.Level(level)
         self.window!.collectionBehavior = [.canJoinAllSpaces,
                                            .ignoresCycle,
                                            .transient,
                                            .fullScreenAuxiliary,
                                            .fullScreenDisallowsTiling]
+        self.window?.backgroundColor = NSColor.yellow.withAlphaComponent(0.4)
     }
     
-    func setWindowFrame(_ frame: NSRect) {
+    func set(_ frame: CGRect) {
         self.window!.setFrame(frame, display: true)
+        setImage(frame)
     }
     
-    func changedActiveSpace() {
-        (self.contentViewController as! SecretVC).setImage()
+    func setImage(_ frame: CGRect) {
+        (self.contentViewController as! SecretVC).setImage(frame)
     }
 
 }

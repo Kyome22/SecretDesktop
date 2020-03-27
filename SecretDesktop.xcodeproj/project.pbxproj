@@ -19,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		1C1429AE23FCE77200FCE199 /* Secret.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Secret.storyboard; sourceTree = "<group>"; };
-		1C1429B023FCE87000FCE199 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		1C7BAB102282251100B0AAE2 /* SecretDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7BAB132282251100B0AAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C7BAB152282251100B0AAE2 /* SecretVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretVC.swift; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		1C7BAB1D2282251200B0AAE2 /* SecretDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretDesktop.entitlements; sourceTree = "<group>"; };
 		1C7BAB23228225BC00B0AAE2 /* SecretWC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretWC.swift; sourceTree = "<group>"; };
 		1C7BAB252282262800B0AAE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1CB1A3DB242DF67D008C7394 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.release.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.release.xcconfig"; sourceTree = "<group>"; };
 		AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.debug.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1C7BAB1A2282251200B0AAE2 /* Base */,
-				1C1429B023FCE87000FCE199 /* ja */,
+				1CB1A3DB242DF67D008C7394 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -361,6 +361,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
@@ -368,6 +369,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -384,6 +386,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
@@ -391,6 +394,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

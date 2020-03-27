@@ -12,15 +12,12 @@ class SecretVC: NSViewController {
 
     @IBOutlet weak var imageView: NSImageView!
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        setImage()
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    func setImage() {
-        let image = NSImage.desktopPicture(targetPoint: self.view.window!.frame.origin)
-        imageView.image = image?.resize(targetSize: self.view.bounds.size)
+    func setImage(_ frame: CGRect) {
+        imageView.image = NSImage.background(frame)
     }
 
 }
-
