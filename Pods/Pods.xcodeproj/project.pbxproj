@@ -49,16 +49,16 @@
 		6DB3507426321B54A8C836813EC781C9 /* SpiceKey-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SpiceKey-Info.plist"; sourceTree = "<group>"; };
 		6F102CCE866CD7B13A32F4F4E1F931F3 /* SpiceKey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SpiceKey-umbrella.h"; sourceTree = "<group>"; };
 		76FF6ED4033447B92FDFAB2F5922FDD9 /* Pods-SecretDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SecretDesktop.release.xcconfig"; sourceTree = "<group>"; };
-		83E955D292FAC8948BB6F3777B92F68D /* Pods_SecretDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SecretDesktop.framework; path = "Pods-SecretDesktop.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E955D292FAC8948BB6F3777B92F68D /* Pods_SecretDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A5D51CB28738D0D7853B203671C100 /* SpiceKeyManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpiceKeyManager.swift; path = SpiceKey/SpiceKeyManager.swift; sourceTree = "<group>"; };
 		99DA921DE580E4EFD0EFF2EDF94FC575 /* Pods-SecretDesktop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SecretDesktop-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A21BD254B653D1A77F95973B6D05BBB8 /* KeyCombination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyCombination.swift; path = SpiceKey/KeyCombination.swift; sourceTree = "<group>"; };
 		A4E4D1AE2E2ABA474DFA8A2684BEB2AC /* Pods-SecretDesktop-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SecretDesktop-Info.plist"; sourceTree = "<group>"; };
 		AC26B979356B6E1B4BD3A38CF41FD953 /* Pods-SecretDesktop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SecretDesktop.modulemap"; sourceTree = "<group>"; };
 		D903654B51BDA71AFC735EED43904691 /* Pods-SecretDesktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SecretDesktop.debug.xcconfig"; sourceTree = "<group>"; };
 		DE04919FCE7D394A9956EF11666B55BF /* SpiceKey.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SpiceKey.xcconfig; sourceTree = "<group>"; };
-		E6C814880AE58B0698D0572951F4ABC7 /* SpiceKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SpiceKey.framework; path = SpiceKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6C814880AE58B0698D0572951F4ABC7 /* SpiceKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpiceKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB67423BBF98C713C56F50D723F5E761 /* SpiceKey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SpiceKey.modulemap; sourceTree = "<group>"; };
 		F5BB2450BF757289A0D5AC9206509C37 /* Pods-SecretDesktop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SecretDesktop-dummy.m"; sourceTree = "<group>"; };
 		F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -102,7 +102,6 @@
 				B5EA29CF911C5335B0FEE50BF9E8B340 /* Resources */,
 				9F450BE080DF34516364064BC5566B7A /* Support Files */,
 			);
-			name = SpiceKey;
 			path = SpiceKey;
 			sourceTree = "<group>";
 		};
@@ -263,7 +262,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1130;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -345,7 +344,6 @@
 			baseConfigurationReference = 76FF6ED4033447B92FDFAB2F5922FDD9 /* Pods-SecretDesktop.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -508,7 +506,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE04919FCE7D394A9956EF11666B55BF /* SpiceKey.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -546,7 +543,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DE04919FCE7D394A9956EF11666B55BF /* SpiceKey.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -585,7 +581,6 @@
 			baseConfigurationReference = D903654B51BDA71AFC735EED43904691 /* Pods-SecretDesktop.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
