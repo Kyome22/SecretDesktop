@@ -47,7 +47,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let wsnc = NSWorkspace.shared.notificationCenter
         wsnc.addObserver(self, selector: #selector(changedActiveSpace(_:)),
                          name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
-        toggleHide()
+        DispatchQueue.main.async {
+            self.toggleHide()
+        }
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

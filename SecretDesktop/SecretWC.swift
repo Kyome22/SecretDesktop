@@ -32,7 +32,7 @@ class SecretWC: NSWindowController {
                                            .transient,
                                            .fullScreenAuxiliary,
                                            .fullScreenDisallowsTiling]
-        self.window?.backgroundColor = NSColor.yellow.withAlphaComponent(0.4)
+        self.window?.backgroundColor = NSColor.clear
     }
     
     func set(_ frame: CGRect) {
