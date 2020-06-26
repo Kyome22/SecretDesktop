@@ -2,7 +2,7 @@
 .DS_Store
 
 # CocoaPods
-Pods
+Pods/
 
 # SecretDesktop
 materials/
