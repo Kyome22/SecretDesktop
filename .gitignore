@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# CocoaPods
+Pods
+
 # SecretDesktop
 materials/
 

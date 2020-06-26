@@ -44,32 +44,31 @@ extension NSMenuItem {
 }
 
 extension NSScreen {
-    static var mainHeight: CGFloat {
-        return main?.frame.height ?? CGFloat.zero
-    }
-    static var totalRect: CGRect {
-        return screens.reduce(CGRect.zero) { (result, screen) -> CGRect in
-            return result.union(screen.frame)
-        }
+    var displayID: CGDirectDisplayID {
+        let key = NSDeviceDescriptionKey(rawValue: "NSScreenNumber")
+        return deviceDescription[key] as! CGDirectDisplayID
     }
 }
 
-extension NSImage {
-    static func background(_ frame: CGRect) -> NSImage? {
-        guard var list = CGWindowListCopyWindowInfo(.optionOnScreenOnly, kCGNullWindowID) as? [NSDictionary] else {
-            return nil
+extension CGImage {
+    static func background(_ displayID: CGDirectDisplayID, _ windowID: CGWindowID) -> CGImage? {
+        let dBounds = CGDisplayBounds(displayID)
+        let windowOptions: CGWindowListOption = [.optionOnScreenOnly, .optionOnScreenBelowWindow]
+        let list = CGWindowListCopyWindowInfo(windowOptions, windowID) as? [NSDictionary]
+        let dict = list?.first { (dict) -> Bool in
+            guard let owner = dict[kCGWindowOwnerName] as? String,
+                let name = dict[kCGWindowName] as? String,
+                let bounds = dict[kCGWindowBounds] as? NSDictionary,
+                let x = bounds["X"] as? CGFloat,
+                let y = bounds["Y"] as? CGFloat else {
+                    return false
+            }
+            return owner == "Dock"
+                && name.hasPrefix("Desktop")
+                && CGPoint(x: x, y: y).equalTo(dBounds.origin)
         }
-        let origin = CGPoint(x: frame.minX, y: NSScreen.mainHeight - frame.maxY)
-        list = list.compactMap({ (dict) -> NSDictionary? in
-            guard let name = dict[kCGWindowName] as? String, name.contains("Desktop Picture") else { return nil }
-            let bounds = dict[kCGWindowBounds] as! NSDictionary
-            guard CGPoint(x: bounds["X"] as! CGFloat, y: bounds["Y"] as! CGFloat).equalTo(origin) else { return nil }
-            return dict
-        })
-        guard
-            let dict = list.first, let id = dict[kCGWindowNumber] as? CGWindowID,
-            let cgImage = CGWindowListCreateImage(CGRect.null, .optionIncludingWindow, id, .boundsIgnoreFraming)
-            else { return nil }
-        return NSImage(cgImage: cgImage, size: frame.size)
+        guard let id = dict?[kCGWindowNumber] as? CGWindowID else { return nil }
+        let imageOptions: CGWindowImageOption = [.bestResolution, .boundsIgnoreFraming]
+        return CGWindowListCreateImage(dBounds, .optionIncludingWindow, id, imageOptions)
     }
 }

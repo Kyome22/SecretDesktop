@@ -11,14 +11,25 @@ import Foundation.NSObject
 open class SpiceKeyData: NSObject, NSCoding {
     
     public var primaryKey: String
-    public var keyCode: UInt16
+    public var keyCode: CGKeyCode
     public var control: Bool
     public var option: Bool
     public var shift: Bool
     public var command: Bool
     public var spiceKey: SpiceKey?
     
-    public init(_ primaryKey: String, _ keyCode: UInt16, _ control: Bool, _ option: Bool, _ shift: Bool, _ command: Bool, _ spiceKey: SpiceKey) {
+    public var key: Key? {
+        return Key(keyCode: keyCode)
+    }
+    public var modifierFlags: ModifierFlags? {
+        return ModifierFlags(control: control, option: option, shift: shift, command: command)
+    }
+    public var keyCombination: KeyCombination? {
+        guard let key = key, let modifierFlags = modifierFlags else { return nil }
+        return KeyCombination(key, modifierFlags)
+    }
+    
+    public init(_ primaryKey: String, _ keyCode: CGKeyCode, _ control: Bool, _ option: Bool, _ shift: Bool, _ command: Bool, _ spiceKey: SpiceKey) {
         self.primaryKey = primaryKey
         self.keyCode = keyCode
         self.control = control
@@ -28,9 +39,19 @@ open class SpiceKeyData: NSObject, NSCoding {
         self.spiceKey = spiceKey
     }
     
+    public init(_ primaryKey: String, _ key: Key, _ modifierFlags: ModifierFlags, _ spiceKey: SpiceKey) {
+        self.primaryKey = primaryKey
+        self.keyCode = key.keyCode
+        self.control = modifierFlags.containsControl
+        self.option = modifierFlags.containsOption
+        self.shift = modifierFlags.containsShift
+        self.command = modifierFlags.containsCommand
+        self.spiceKey = spiceKey
+    }
+    
     required public init?(coder: NSCoder) {
         primaryKey = (coder.decodeObject(forKey: "primaryKey") as? String) ?? ""
-        keyCode = coder.decodeObject(forKey: "keyCode") as! UInt16
+        keyCode = coder.decodeObject(forKey: "keyCode") as! CGKeyCode
         control = coder.decodeBool(forKey: "control")
         option = coder.decodeBool(forKey: "option")
         shift = coder.decodeBool(forKey: "shift")

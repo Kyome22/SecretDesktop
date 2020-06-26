@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     private var hideItem: NSMenuItem!
-    private var desktops = [SecretWC]()
+    private var panels = [SecretPanel]()
     private var isSecret: Bool = false
     private var spiceKey: SpiceKey?
     
@@ -64,18 +64,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func toggleHide() {
         if isSecret {
-            desktops.forEach { (wc) in
-                wc.close()
+            panels.forEach { (panel) in
+                panel.close()
             }
-            desktops.removeAll()
+            panels.removeAll()
             hideItem.state = NSControl.StateValue.off
         } else {
-            let sb = NSStoryboard(name: "Secret", bundle: nil)
             for screen in NSScreen.screens {
-                let wc = sb.instantiateInitialController() as! SecretWC
-                wc.set(screen.frame)
-                wc.showWindow(nil)
-                desktops.append(wc)
+                let panel = SecretPanel(screen.displayID, screen.frame)
+                panels.append(panel)
+                panel.orderFrontRegardless()
+            }
+            panels.forEach { (panel) in
+                panel.setImage()
             }
             hideItem.state = NSControl.StateValue.on
         }
@@ -100,12 +101,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func changedActiveSpace(_ notification: NSNotification) {
-        guard let screen = NSScreen.main else { return }
-        desktops.forEach { (wc) in
-            guard let window = wc.window else { return }
-            if window.frame.origin.equalTo(screen.frame.origin) {
-                wc.setImage(window.frame)
-            }
+        panels.forEach { (panel) in
+            panel.setImage()
         }
     }
     
