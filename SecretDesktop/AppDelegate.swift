@@ -25,9 +25,10 @@ import SpiceKey
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var menu: NSMenu!
-    
-    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    private var hideItem: NSMenuItem!
+    @IBOutlet weak var hideItem: NSMenuItem!
+
+    private let statusItem = NSStatusBar.system
+        .statusItem(withLength: NSStatusItem.variableLength)
     private var panels = [SecretPanel]()
     private var isSecret: Bool = false
     private var spiceKey: SpiceKey?
@@ -35,12 +36,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.menu = menu
         statusItem.button?.image = NSImage(named: "StatusIcon")
-        hideItem = menu.item(withTag: 0)!
-        hideItem.setAction(target: self, selector: #selector(toggleHide))
-        menu.item(withTag: 1)?.setAction(target: self, selector: #selector(openAbout))
+        hideItem = menu.item(withTag: 0)
         
-        spiceKey = SpiceKey(KeyCombination(Key.h, ModifierFlags.sftCmd), keyDownHandler: {
-            self.toggleHide()
+        spiceKey = SpiceKey(KeyCombination(Key.h, ModifierFlags.sftCmd), keyDownHandler: { [weak self] in
+            if let self = self {
+                self.toggleHide(self.hideItem)
+            }
         })
         spiceKey?.register()
         
@@ -48,7 +49,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         wsnc.addObserver(self, selector: #selector(changedActiveSpace(_:)),
                          name: NSWorkspace.activeSpaceDidChangeNotification, object: nil)
         DispatchQueue.main.async {
-            self.toggleHide()
+            self.toggleHide(self.hideItem)
         }
     }
     
@@ -58,52 +59,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidChangeScreenParameters(_ notification: Notification) {
         if isSecret {
-            toggleHide()
+            toggleHide(hideItem)
+        }
+    }
+
+    @objc func changedActiveSpace(_ notification: NSNotification) {
+        panels.forEach { (panel) in
+            panel.setImage()
         }
     }
     
-    @objc func toggleHide() {
+    @IBAction func toggleHide(_ sender: NSMenuItem?) {
         if isSecret {
             panels.forEach { (panel) in
                 panel.close()
             }
             panels.removeAll()
-            hideItem.state = NSControl.StateValue.off
+            sender?.state = .off
         } else {
             for screen in NSScreen.screens {
                 let panel = SecretPanel(screen.displayID, screen.frame)
                 panels.append(panel)
                 panel.orderFrontRegardless()
-            }
-            panels.forEach { (panel) in
                 panel.setImage()
             }
-            hideItem.state = NSControl.StateValue.on
+            sender?.state = .on
         }
         isSecret = !isSecret
     }
     
-    @objc func openAbout() {
+    @IBAction func openAbout(_ sender: Any?) {
         NSApp.activate(ignoringOtherApps: true)
-        let paragraph = NSMutableParagraphStyle()
-        paragraph.alignment = .center
         let mutableAttrStr = NSMutableAttributedString()
-        var attr: [NSAttributedString.Key : Any] = [
-            .foregroundColor : NSColor.textColor,
-            .paragraphStyle : paragraph
-        ]
+        var attr: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.textColor]
         mutableAttrStr.append(NSAttributedString(string: "oss".localized, attributes: attr))
         let url = "https://github.com/Kyome22/SecretDesktop"
-        attr = [.foregroundColor : NSColor.url, .link : url, .paragraphStyle : paragraph]
+        attr = [.foregroundColor: NSColor.url, .link: url]
         mutableAttrStr.append(NSAttributedString(string: url, attributes: attr))
         let key = NSApplication.AboutPanelOptionKey.credits
         NSApp.orderFrontStandardAboutPanel(options: [key: mutableAttrStr])
-    }
-    
-    @objc func changedActiveSpace(_ notification: NSNotification) {
-        panels.forEach { (panel) in
-            panel.setImage()
-        }
     }
     
 }

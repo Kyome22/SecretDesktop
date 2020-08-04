@@ -22,7 +22,8 @@ import Cocoa
 
 func logput(_ item: Any..., file: String = #file, line: Int = #line, function: String = #function) {
     #if DEBUG
-    Swift.print("Log: \(file):Line\(line):\(function)", item)
+    let fileName = URL(fileURLWithPath: file).lastPathComponent
+    Swift.print("Log: \(fileName), Line:\(line), \(function)", item)
     #endif
 }
 
@@ -34,13 +35,6 @@ extension String {
 
 extension NSColor {
     static let url = NSColor(named: "url")!
-}
-
-extension NSMenuItem {
-    func setAction(target: AnyObject, selector: Selector) {
-        self.target = target
-        self.action = selector
-    }
 }
 
 extension NSScreen {

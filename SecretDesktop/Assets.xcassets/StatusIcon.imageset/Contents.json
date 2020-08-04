@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "status@1x.png",
       "idiom" : "mac",
-      "filename" : "status18.png",
       "scale" : "1x"
     },
     {
+      "filename" : "status@2x.png",
       "idiom" : "mac",
-      "filename" : "status36.png",
       "scale" : "2x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   },
   "properties" : {
     "template-rendering-intent" : "template"
