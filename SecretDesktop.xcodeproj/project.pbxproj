@@ -3,34 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C7BAB142282251100B0AAE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB132282251100B0AAE2 /* AppDelegate.swift */; };
 		1C7BAB182282251200B0AAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7BAB172282251200B0AAE2 /* Assets.xcassets */; };
-		1C7BAB1B2282251200B0AAE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7BAB192282251200B0AAE2 /* Main.storyboard */; };
-		1C7BAB262282262800B0AAE2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BAB252282262800B0AAE2 /* Extensions.swift */; };
 		1CB1A3DE242E53E8008C7394 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1A3E0242E53E8008C7394 /* Localizable.strings */; };
+		1CC73ED42886388900A53FEE /* SpiceKey in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC73ED32886388900A53FEE /* SpiceKey */; };
+		1CC73ED7288638EC00A53FEE /* CoreGraphics+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC73ED6288638EC00A53FEE /* CoreGraphics+Extensions.swift */; };
+		1CC73ED92886390500A53FEE /* AppKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC73ED82886390500A53FEE /* AppKit+Extensions.swift */; };
+		1CC73EDB2886394500A53FEE /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC73EDA2886394500A53FEE /* Foundation+Extensions.swift */; };
+		1CC73EDD28863B6F00A53FEE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC73EDC28863B6F00A53FEE /* main.swift */; };
+		1CC73EE028863C0800A53FEE /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC73EDF28863C0800A53FEE /* MenuManager.swift */; };
 		1CDB361324A6661100A79BF4 /* SecretPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDB361224A6661100A79BF4 /* SecretPanel.swift */; };
-		D6DFD52AF30B951EA3B38DD5 /* Pods_SecretDesktop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C7BAB102282251100B0AAE2 /* SecretDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7BAB132282251100B0AAE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C7BAB172282251200B0AAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C7BAB1A2282251200B0AAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C7BAB1C2282251200B0AAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C7BAB1D2282251200B0AAE2 /* SecretDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SecretDesktop.entitlements; sourceTree = "<group>"; };
-		1C7BAB252282262800B0AAE2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1CB1A3DB242DF67D008C7394 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ja; path = ja.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CB1A3DF242E53E8008C7394 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1CB1A3E1242E5402008C7394 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1CC73ED6288638EC00A53FEE /* CoreGraphics+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Extensions.swift"; sourceTree = "<group>"; };
+		1CC73ED82886390500A53FEE /* AppKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppKit+Extensions.swift"; sourceTree = "<group>"; };
+		1CC73EDA2886394500A53FEE /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		1CC73EDC28863B6F00A53FEE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1CC73EDF28863C0800A53FEE /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		1CDB361224A6661100A79BF4 /* SecretPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretPanel.swift; sourceTree = "<group>"; };
-		51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecretDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.release.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.release.xcconfig"; sourceTree = "<group>"; };
-		AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SecretDesktop.debug.xcconfig"; path = "Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6DFD52AF30B951EA3B38DD5 /* Pods_SecretDesktop.framework in Frameworks */,
+				1CC73ED42886388900A53FEE /* SpiceKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +52,6 @@
 			children = (
 				1C7BAB122282251100B0AAE2 /* SecretDesktop */,
 				1C7BAB112282251100B0AAE2 /* Products */,
-				B52B169FDAA763FDD3BC308B /* Pods */,
-				221896502C43F88E46AB5053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,10 +66,11 @@
 		1C7BAB122282251100B0AAE2 /* SecretDesktop */ = {
 			isa = PBXGroup;
 			children = (
-				1C7BAB252282262800B0AAE2 /* Extensions.swift */,
+				1CC73EDC28863B6F00A53FEE /* main.swift */,
 				1C7BAB132282251100B0AAE2 /* AppDelegate.swift */,
-				1C7BAB192282251200B0AAE2 /* Main.storyboard */,
-				1CDB361224A6661100A79BF4 /* SecretPanel.swift */,
+				1CC73ED5288638D900A53FEE /* Extensions */,
+				1CC73EDE28863BF600A53FEE /* Model */,
+				1CC73EE42886549600A53FEE /* View */,
 				1C7BAB172282251200B0AAE2 /* Assets.xcassets */,
 				1C7BAB1C2282251200B0AAE2 /* Info.plist */,
 				1C7BAB1D2282251200B0AAE2 /* SecretDesktop.entitlements */,
@@ -78,21 +79,30 @@
 			path = SecretDesktop;
 			sourceTree = "<group>";
 		};
-		221896502C43F88E46AB5053 /* Frameworks */ = {
+		1CC73ED5288638D900A53FEE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				51034ADFF5202B4B0A855ECB /* Pods_SecretDesktop.framework */,
+				1CC73ED82886390500A53FEE /* AppKit+Extensions.swift */,
+				1CC73ED6288638EC00A53FEE /* CoreGraphics+Extensions.swift */,
+				1CC73EDA2886394500A53FEE /* Foundation+Extensions.swift */,
 			);
-			name = Frameworks;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B52B169FDAA763FDD3BC308B /* Pods */ = {
+		1CC73EDE28863BF600A53FEE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */,
-				624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */,
+				1CC73EDF28863C0800A53FEE /* MenuManager.swift */,
 			);
-			path = Pods;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CC73EE42886549600A53FEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CDB361224A6661100A79BF4 /* SecretPanel.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,17 +112,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C7BAB202282251200B0AAE2 /* Build configuration list for PBXNativeTarget "SecretDesktop" */;
 			buildPhases = (
-				5DFEB2130CBD2C051C9C4BE3 /* [CP] Check Pods Manifest.lock */,
 				1C7BAB0C2282251100B0AAE2 /* Sources */,
 				1C7BAB0D2282251100B0AAE2 /* Frameworks */,
 				1C7BAB0E2282251100B0AAE2 /* Resources */,
-				EA4D4138786DCE91BB565790 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SecretDesktop;
+			packageProductDependencies = (
+				1CC73ED32886388900A53FEE /* SpiceKey */,
+			);
 			productName = SecretDesktop;
 			productReference = 1C7BAB102282251100B0AAE2 /* SecretDesktop.app */;
 			productType = "com.apple.product-type.application";
@@ -124,7 +135,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Takuto Nakamura";
 				TargetAttributes = {
 					1C7BAB0F2282251100B0AAE2 = {
@@ -142,6 +153,9 @@
 				ja,
 			);
 			mainGroup = 1C7BAB072282251100B0AAE2;
+			packageReferences = (
+				1CC73ED22886388900A53FEE /* XCRemoteSwiftPackageReference "SpiceKey" */,
+			);
 			productRefGroup = 1C7BAB112282251100B0AAE2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,53 +172,10 @@
 			files = (
 				1C7BAB182282251200B0AAE2 /* Assets.xcassets in Resources */,
 				1CB1A3DE242E53E8008C7394 /* Localizable.strings in Resources */,
-				1C7BAB1B2282251200B0AAE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5DFEB2130CBD2C051C9C4BE3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SecretDesktop-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA4D4138786DCE91BB565790 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SecretDesktop/Pods-SecretDesktop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C7BAB0C2282251100B0AAE2 /* Sources */ = {
@@ -212,23 +183,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CDB361324A6661100A79BF4 /* SecretPanel.swift in Sources */,
+				1CC73ED7288638EC00A53FEE /* CoreGraphics+Extensions.swift in Sources */,
+				1CC73EDD28863B6F00A53FEE /* main.swift in Sources */,
+				1CC73EDB2886394500A53FEE /* Foundation+Extensions.swift in Sources */,
 				1C7BAB142282251100B0AAE2 /* AppDelegate.swift in Sources */,
-				1C7BAB262282262800B0AAE2 /* Extensions.swift in Sources */,
+				1CC73ED92886390500A53FEE /* AppKit+Extensions.swift in Sources */,
+				1CC73EE028863C0800A53FEE /* MenuManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1C7BAB192282251200B0AAE2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C7BAB1A2282251200B0AAE2 /* Base */,
-				1CB1A3DB242DF67D008C7394 /* ja */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1CB1A3E0242E53E8008C7394 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -268,6 +234,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -293,7 +260,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -330,6 +297,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -349,7 +317,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -360,22 +328,25 @@
 		};
 		1C7BAB212282251200B0AAE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC3FB20DDAE73E3D375B296A /* Pods-SecretDesktop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SecretDesktop/SecretDesktop.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.7.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2019-2020 Takuto Nakamura";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -385,22 +356,25 @@
 		};
 		1C7BAB222282251200B0AAE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 624CFDFE9B883273834C6DB5 /* Pods-SecretDesktop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SecretDesktop/SecretDesktop.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.7.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = VJ5N2X84K8;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SecretDesktop/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2019-2020 Takuto Nakamura";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.SecretDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -430,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1CC73ED22886388900A53FEE /* XCRemoteSwiftPackageReference "SpiceKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kyome22/SpiceKey.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1CC73ED32886388900A53FEE /* SpiceKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CC73ED22886388900A53FEE /* XCRemoteSwiftPackageReference "SpiceKey" */;
+			productName = SpiceKey;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C7BAB082282251100B0AAE2 /* Project object */;
 }
