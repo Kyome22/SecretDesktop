@@ -74,6 +74,10 @@ final class SecretDesktopAppModelImpl: SecretDesktopAppModel {
             self?.secretModel.toggle()
         })
         spiceKey?.register()
+
+        Task { @MainActor in
+            secretModel.toggle()
+        }
     }
 
     private func applicationWillTerminate() {
