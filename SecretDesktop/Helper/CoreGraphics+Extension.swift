@@ -27,15 +27,13 @@ extension CGImage {
         let list = CGWindowListCopyWindowInfo(windowOptions, windowID) as? [[String: Any]]
         let dict = list?.first { (dict) -> Bool in
             guard let owner = dict[kCGWindowOwnerName as String] as? String,
-                  let name = dict[kCGWindowName as String] as? String,
+                  let layer = dict[kCGWindowLayer as String] as? Int,
                   let bounds = dict[kCGWindowBounds as String] as? [String: Any],
                   let x = bounds["X"] as? CGFloat,
                   let y = bounds["Y"] as? CGFloat else {
                 return false
             }
-            return owner == "Dock"
-            && name.hasPrefix("Desktop")
-            && CGPoint(x: x, y: y).equalTo(dBounds.origin)
+            return owner == "Dock" && layer < 0 && CGPoint(x: x, y: y).equalTo(dBounds.origin)
         }
         guard let id = dict?[kCGWindowNumber as String] as? CGWindowID else {
             return nil
